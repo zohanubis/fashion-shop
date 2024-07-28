@@ -8,7 +8,7 @@ const MainCrosel = () => {
         <img className="cursor-pointer" role="presentation" src={item.image} alt="" />
     ));
 
-    return <AliceCarousel items={items} />;
+    return <AliceCarousel items={items} disableButtonsControls autoPlay autoPlayInterval={1000} infinite />;
 };
 
 export default MainCrosel;
