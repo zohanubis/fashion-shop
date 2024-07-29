@@ -179,7 +179,7 @@ export default function Navigation() {
                                             alt=""
                                             className="block h-auto w-5 flex-shrink-0"
                                         />
-                                        <span className="ml-3 block text-base font-medium text-gray-900">CAD</span>
+                                        <span className="ml-3 block text-base font-medium text-gray-900">USD</span>
                                         <span className="sr-only">, change currency</span>
                                     </a>
                                 </div>
