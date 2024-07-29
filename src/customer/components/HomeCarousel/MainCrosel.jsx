@@ -5,7 +5,7 @@ import { mainCarouselData } from './MainCarouselData';
 
 const MainCrosel = () => {
     const items = mainCarouselData.map((item) => (
-        <img className="cursor-pointer" role="presentation" src={item.image} alt="" />
+        <img className="cursor-pointer -z-10" role="presentation" src={item.image} alt="" />
     ));
 
     return <AliceCarousel items={items} disableButtonsControls autoPlay autoPlayInterval={1000} infinite />;

@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import HomeSectionCard from '../HomeSectionCard/HomeSectionCard';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import { ButtonBase } from '@mui/material';
-import { mens_kurta } from '../../../Data/mens_kurta';
+import { Button } from '@mui/material';
 
-const HomeSectionCarousel = () => {
+const HomeSectionCarousel = ({ data, sectionName }) => {
     const [activeIndex, setActiveIndex] = useState(0);
-    //Giới hạn số lượng product sẽ hiển thị
+
+    // Giới hạn số lượng sản phẩm sẽ hiển thị
     const responsive = {
         0: { items: 1 },
         720: { items: 3 },
@@ -18,59 +18,55 @@ const HomeSectionCarousel = () => {
     const slideNext = () => setActiveIndex(activeIndex + 1);
 
     const syncActiveIndex = ({ item }) => setActiveIndex(item);
-    const items = mens_kurta.slice(0, 10).map((item) => <HomeSectionCard product={item} />);
+
+    const items = data.slice(0, 10).map((item) => <HomeSectionCard product={item} />);
 
     return (
         <div className="border">
+            <h2 className="text-2xl font-extrabold text-gray-800 py-5">{sectionName}</h2>
             <div className="relative p-5">
                 <AliceCarousel
                     items={items}
                     disableButtonsControls
-                    infinite
                     responsive={responsive}
                     disableDotsControls
-                    onSlideChange={syncActiveIndex}
+                    onSlideChanged={syncActiveIndex}
                     activeIndex={activeIndex}
                 />
                 {activeIndex !== items.length - 5 && (
-                    <ButtonBase
+                    <Button
+                        onClick={slideNext}
                         variant="contained"
                         className="z-50 bg-white"
-                        onClick={slideNext}
                         sx={{
                             position: 'absolute',
                             top: '8rem',
                             right: '0rem',
                             transform: 'translateX(50%) rotate(90deg)',
                             bgcolor: 'white',
-                            '&:hover': {
-                                bgcolor: 'grey.300',
-                            },
                         }}
                         aria-label="next"
                     >
                         <KeyboardArrowLeftIcon sx={{ transform: 'rotate(90deg)', color: 'black' }} />
-                    </ButtonBase>
+                    </Button>
                 )}
-
-                <ButtonBase
-                    variant="contained"
-                    className="z-50 bg-white"
-                    onClick={slidePrev}
-                    sx={{
-                        position: 'absolute',
-                        top: '8rem',
-                        left: '0rem',
-                        transform: 'translateX(-50%) rotate(-90deg)',
-                        bgcolor: 'white',
-                        '&:hover': {
-                            bgcolor: 'grey.300',
-                        },
-                    }}
-                    aria-label="next"
-                >
-                    <KeyboardArrowLeftIcon sx={{ transform: 'rotate(90deg)', color: 'black' }} />
-                </ButtonBase>
+                {activeIndex !== 0 && (
+                    <Button
+                        onClick={slidePrev}
+                        variant="contained"
+                        className="z-50 bg-white"
+                        sx={{
+                            position: 'absolute',
+                            top: '8rem',
+                            left: '0rem',
+                            transform: 'translateX(-50%) rotate(-90deg)',
+                            bgcolor: 'white',
+                        }}
+                        aria-label="prev"
+                    >
+                        <KeyboardArrowLeftIcon sx={{ transform: 'rotate(90deg)', color: 'black' }} />
+                    </Button>
+                )}
             </div>
         </div>
     );
