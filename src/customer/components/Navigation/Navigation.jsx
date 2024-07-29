@@ -210,8 +210,8 @@ export default function Navigation() {
                             <div className="ml-4 flex lg:ml-0">
                                 <span className="sr-only">Your Company</span>
                                 <img
-                                    src="https://res.cloudinary.com/ddkso1wxi/image/upload/v1675919455/Logo/Copy_of_Zosh_Academy_nblljp.png"
-                                    alt="Shopwithzosh"
+                                    src="https://scontent.fhan4-5.fna.fbcdn.net/v/t39.30808-6/350990284_6418764571535694_6730452543294494661_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Hxnahuc7HVAQ7kNvgFOEs9q&_nc_ht=scontent.fhan4-5.fna&oh=00_AYBT1N_ujl3m0rAaGGW1eIxIeDfL-1YwXZ2FgD74sXBIug&oe=66AD38B3"
+                                    alt="Zohanubis"
                                     className="h-8 w-8 mr-2"
                                 />
                             </div>
@@ -367,15 +367,7 @@ export default function Navigation() {
                                             >
                                                 R
                                             </Avatar>
-                                            {/* <Button
-                        id="basic-button"
-                        aria-controls={open ? "basic-menu" : undefined}
-                        aria-haspopup="true"
-                        aria-expanded={open ? "true" : undefined}
-                        onClick={handleUserClick}
-                      >
-                        Dashboard
-                      </Button> */}
+
                                             <Menu
                                                 id="basic-menu"
                                                 anchorEl={anchorEl}
