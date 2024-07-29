@@ -52,4 +52,12 @@ export const singleFilters = [
             { value: '100', label: '100%' },
         ],
     },
+    {
+        id: 'stock',
+        name: 'Stock',
+        options: [
+            { value: 'in_stock', label: 'In Stock' },
+            { value: 'out_in_stock', label: 'Out in Stock' },
+        ],
+    },
 ];
